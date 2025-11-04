@@ -7,19 +7,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: url('foto12.png') no-repeat center center/cover;
-      position: relative;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(2px);
-    }
+  font-family: 'Poppins', sans-serif;
+  background: url('foto12.png') no-repeat center center;
+  background-size: contain; /* Mostra a foto inteira */
+  background-position: center top; /* Ajusta o foco para o topo da imagem */
+  background-color: #000; /* Cor de fundo neutra para as bordas */
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
     main {
       position: relative;
       z-index: 2;
