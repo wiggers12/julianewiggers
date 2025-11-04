@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juliane Wiggers — Nutrição e Performance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('foto12.png') no-repeat center center/cover;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+    }
+    main {
+      position: relative;
+      z-index: 2;
+    }
+    input, textarea {
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      padding: 10px 12px;
+      width: 100%;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+    }
+    label {
+      color: white;
+      font-weight: 500;
+      margin-bottom: 4px;
+      display: block;
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4">
+  <main class="text-center max-w-md w-full">
+    <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Juliane Wiggers</h1>
+    <h2 class="text-lg sm:text-xl text-green-200 font-medium mb-6">Nutrição e Performance</h2>
+
+    <form id="form" class="space-y-4 bg-white/10 p-6 rounded-2xl shadow-lg">
+      <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" required placeholder="Seu nome completo" />
+      </div>
+      <div>
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" required placeholder="Ex: 28" />
+      </div>
+      <div>
+        <label for="objetivo">Objetivo</label>
+        <input type="text" id="objetivo" required placeholder="Ex: Emagrecimento, ganho de massa..." />
+      </div>
+      <div>
+        <label for="whatsapp">WhatsApp</label>
+        <input type="tel" id="whatsapp" required placeholder="(51) 9xxxx-xxxx" />
+      </div>
+      <div>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" rows="3" placeholder="Conte um pouco sobre você..."></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg text-lg transition-all">
+        Enviar para ganhar o desconto
+      </button>
+    </form>
+
+    <footer class="mt-6 text-white/90">
+      <p>Siga no Instagram: <a href="https://instagram.com/wiggersjuliane" target="_blank" class="text-green-300 hover:underline">@wiggersjuliane</a></p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const idade = document.getElementById('idade').value;
+      const objetivo = document.getElementById('objetivo').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      const texto = `👋 Olá, me chamo *${nome}* (${idade} anos)%0A` +
+                    `🎯 Meu objetivo é: *${objetivo}*%0A` +
+                    `📱 Meu WhatsApp: *${whatsapp}*%0A` +
+                    `💬 Mensagem: ${mensagem || '—'}%0A%0A` +
+                    `Enviada via *Landing Page - Juliane Wiggers Nutrição & Performance*`;
+
+      const url = `https://wa.me/5551991718012?text=${encodeURI(texto)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
