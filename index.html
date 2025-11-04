@@ -7,23 +7,21 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-  font-family: 'Poppins', sans-serif;
-  background: url('foto12.png') no-repeat center center;
-  background-size: contain; /* Mostra a foto inteira */
-  background-position: center top; /* Ajusta o foco para o topo da imagem */
-  background-color: #000; /* Cor de fundo neutra para as bordas */
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-body::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2px);
-}
-
+      font-family: 'Poppins', sans-serif;
+      background: url('foto12.png') no-repeat center top;
+      background-size: contain; /* Mostra a foto inteira */
+      background-color: #000; /* Fundo neutro nas bordas */
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+    }
     main {
       position: relative;
       z-index: 2;
@@ -78,7 +76,9 @@ body::before {
     </form>
 
     <footer class="mt-6 text-white/90">
-      <p>Siga no Instagram: <a href="https://instagram.com/wiggersjuliane" target="_blank" class="text-green-300 hover:underline">@wiggersjuliane</a></p>
+      <p>Siga no Instagram: 
+        <a href="https://instagram.com/wiggersjuliane" target="_blank" class="text-green-300 hover:underline">@wiggersjuliane</a>
+      </p>
     </footer>
   </main>
 
